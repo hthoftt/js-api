@@ -62,11 +62,10 @@ search.addEventListener("click", () => {
     if (keyword) {
         const regex = new RegExp(keyword, 'gi');
         filterData = data.filter(item => item.作物名稱 && regex.test(item.作物名稱));
+        renderData(filterData);
     } else {
-        // 如果輸入是空的，就顯示全部
-        filterData = data;
+        return;
     }
-    renderData(filterData);
     input.value = '';
 });
 
